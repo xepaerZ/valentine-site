@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b6b;
+  clip-path: polygon(
+                  50% 15%,
+                  60% 0%,
+                  75% 0%,
+                  85% 15%,
+                  100% 30%,
+                  90% 50%,
+                  75% 70%,
+                  50% 100%,
+                  25% 70%,
+                  10% 50%,
+                  0% 30%,
+                  15% 15%,
+                  25% 0%,
+                  40% 0%
+  );
+  animation: float 5s linear forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-div-img {
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.modal-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+#yes-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#no-btn {
+  background-color: #f44336;
+  color: white;
+}

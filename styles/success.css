@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffebee;
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #d32f2f;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #c62828;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.heart {
+  font-size: 5rem;
+  color: #d32f2f;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=success.css.map */
