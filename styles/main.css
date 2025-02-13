@@ -22,10 +22,10 @@ body, html {
 
 .heart {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-color: #ff6b6b;
-  clip-path: polygon(50% 15%, 60% 0%, 75% 0%, 85% 15%, 100% 30%, 90% 50%, 75% 70%, 50% 100%, 25% 70%, 10% 50%, 0% 30%, 15% 15%, 25% 0%, 40% 0%);
+  clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
   animation: float 5s linear forwards;
 }
 

@@ -26,6 +26,7 @@ p {
 }
 
 .heart {
+  padding-left: 25px;
   font-size: 5rem;
   color: #d32f2f;
   animation: float 4s ease-in-out infinite;
@@ -50,4 +51,8 @@ p {
   100% {
     transform: translateY(0);
   }
+}
+
+.container-text {
+  display: flex;
 }

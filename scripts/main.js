@@ -3,28 +3,29 @@ const modal = document.getElementById('modal');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const mainText = document.getElementById('main-text');
+const continueText = document.getElementById('continue-text');
 
 const texts = [
-    "Еще разок!",
-    "Продолжай!",
-    "Ты почти у цели!",
-    "Последний клик!",
-    "Сюрприз!"
+    "Ты заслуживаешь каждой звезды, которая есть на небе.",
+    "Просто хорошо быть рядом с тобой.",
+    "Я выбираю и буду продолжать выбирать тебя.",
+    "Ты, с кем я хочу любоваться закатом."
 ];
 
 document.addEventListener('click', () => {
+    continueText.style.visibility = 'visible'
     clickCount++;
     if (clickCount <= texts.length) {
         mainText.textContent = texts[clickCount - 1];
     }
 
-    if (clickCount === texts.length) {
+    if (clickCount === texts.length + 1) {
         modal.style.display = 'flex';
     }
 });
 
 yesBtn.addEventListener('click', () => {
-    window.location.href = 'success.html'; // Переход на новую страницу
+    window.location.href = 'success.html';
 });
 
 noBtn.addEventListener('click', () => {
@@ -39,7 +40,7 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
 
-    const size = Math.random() * 20 + 10;
+    const size = 24;
     const maxX = window.innerWidth - size;
     const randomX = Math.random() * maxX;
     heart.style.left = `${randomX}px`;
@@ -50,7 +51,7 @@ function createHeart() {
     heart.style.height = `${size}px`;
     heart.style.backgroundColor = `red`;
 
-    const duration = Math.random() * 3 + 2; // От 2 до 5 секунд
+    const duration = Math.random() * 5 + 4;
     heart.style.animationDuration = `${duration}s`;
 
     const container = document.getElementById('hearts-container');
