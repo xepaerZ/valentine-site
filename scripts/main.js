@@ -1,4 +1,6 @@
-let clickCount = 0; // Счетчик кликов
+let clickCount = 0;
+let heartCount = 0;
+const maxHearts = 50;
 const modal = document.getElementById('modal');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
@@ -6,10 +8,10 @@ const mainText = document.getElementById('main-text');
 const continueText = document.getElementById('continue-text');
 
 const texts = [
-    "Ты заслуживаешь каждой звезды, которая есть на небе.",
-    "Просто хорошо быть рядом с тобой.",
-    "Я выбираю и буду продолжать выбирать тебя.",
-    "Ты, с кем я хочу любоваться закатом."
+    "Ты заслуживаешь каждой звезды, которая есть на небе",
+    "Просто хорошо быть рядом с тобой",
+    "Я выбираю и буду продолжать выбирать тебя",
+    "Ты, с кем я хочу любоваться закатом"
 ];
 
 document.addEventListener('click', () => {
@@ -37,6 +39,8 @@ noBtn.addEventListener('click', () => {
 });
 
 function createHeart() {
+    if (heartCount >= maxHearts) return;
+
     const heart = document.createElement('div');
     heart.classList.add('heart');
 
@@ -57,11 +61,18 @@ function createHeart() {
     const container = document.getElementById('hearts-container');
     container.appendChild(heart);
 
+    heartCount++;
+
     heart.addEventListener('animationend', () => {
         heart.remove();
+        heartCount--;
     });
 }
 
-setInterval(() => {
-    createHeart();
-}, 100);
+function autoSpawnHearts() {
+    if (heartCount < maxHearts) {
+        createHeart();
+    }
+}
+
+setInterval(autoSpawnHearts, 100);
